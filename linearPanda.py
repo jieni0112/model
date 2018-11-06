@@ -30,14 +30,23 @@ from sklearn import datasets, linear_model
 from sklearn.metrics import mean_squared_error, r2_score
 
 
-#data = pandas.read_csv('Data\data.csv')
-#print(data)
+data = pandas.read_csv('Data\data2.csv', index_col=None)
+
+print('Concentration, Ratio')
+print(data[['Voltage']])
 
 
-headers = ['Concentration','Ratio','Voltage','pH']
-df = pandas.read_csv('Data\data.csv',names=headers)
-print (df)
 
+regr = linear_model.LinearRegression()
+
+regr.fit(data[['Voltage']], data[['Ratio']])
+
+plt.scatter(data[['Voltage']], data[['Ratio']],  color='black')
+
+plt.xticks(())
+plt.yticks(())
+
+plt.show()
 
 ## define the data/predictors as the pre-set feature names
 #inputs = pandas.DataFrame(data.data, columns=["pH"])
