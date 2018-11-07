@@ -5,7 +5,7 @@ import numpy
 from sklearn import datasets, linear_model
 from sklearn.metrics import mean_squared_error, r2_score
 
-# Read csv
+# Read data csv
 data = pandas.read_csv('Data\data2.csv', index_col=None)
 
 # Print data
